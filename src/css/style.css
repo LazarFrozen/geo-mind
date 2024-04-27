@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --bg1: #ffa94d;
+  --bg2: #ffe066;
+  --white-opacity: #ffffff50;
+  --fill-states: #f9f9f9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  background: -moz-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  background: -webkit-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+}
+
+.container {
+  display: flex;
+  margin-top: 10rem;
+  width: 150rem;
+  height: 70rem;
+  padding: 5rem;
+  background-color: var(--white-opacity);
+  border-radius: 5rem;
+}
+
+.states-shape {
+  stroke-width: 0.3;
+  fill: var(--fill-states);
+}
+
+.state-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fill-states);
+  width: 100%;
+  margin: 0 5rem 5rem 5rem;
+  border-radius: 2.5rem;
+}
+
+.state-informations {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.flag-size {
+  border-top-right-radius: 2.5rem;
+  border-top-left-radius: 2.5rem;
+  width: 30rem;
+  height: 15rem;
+}
+
+.text-center {
+  display: flex;
+  align-items: center;
+}
+
+.state-style {
+  display: flex;
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  height: 4rem;
+}
+
+.state-svg-size {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.state-name {
+  display: flex;
+  align-items: center;
+}
