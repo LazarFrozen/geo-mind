@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
-
+@import "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap";
 :root {
   --bg1: #ffa94d;
   --bg2: #ffe066;
@@ -8,9 +7,9 @@
 }
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -18,26 +17,26 @@ html {
 }
 
 .main-section {
-  display: flex;
-  justify-content: center;
   background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   background: -moz-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   background: -webkit-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  justify-content: center;
   height: 100vh;
+  display: flex;
 }
 
 .container {
-  display: flex;
-  margin-top: 10rem;
-  width: 150rem;
-  height: 70rem;
-  padding: 5rem;
   background-color: var(--white-opacity);
   border-radius: 5rem;
+  width: 150rem;
+  height: 70rem;
+  margin-top: 10rem;
+  padding: 5rem;
+  display: flex;
 }
 
 .states-shape {
-  stroke-width: 0.3;
+  stroke-width: .3px;
   fill: var(--fill-states);
 }
 
@@ -46,38 +45,38 @@ html {
 }
 
 .state-content {
-  display: flex;
-  flex-direction: column;
   background-color: var(--fill-states);
-  margin: 0 5rem 5rem 5rem;
   border-radius: 2.5rem;
+  flex-direction: column;
   height: 50rem;
+  margin: 0 5rem 5rem;
+  display: flex;
 }
 
 .state-informations {
-  display: flex;
   flex-direction: column;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 2rem 1rem;
+  display: flex;
 }
 
 .flag-size {
-  border-top-right-radius: 2.5rem;
   border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
   width: 30rem;
   height: 15rem;
 }
 
 .text-center {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .state-style {
-  display: flex;
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
   height: 4rem;
+  margin-bottom: 2rem;
+  font-family: Merriweather, serif;
+  font-size: 2rem;
+  display: flex;
 }
 
 .state-svg-size {
@@ -86,19 +85,20 @@ html {
 }
 
 .state-name {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .button-container {
-  margin: 0 5rem 0 5rem;
+  margin: 0 5rem;
 }
 
 .button {
-  text-decoration: none;
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
+  border-radius: 2rem;
   width: 16rem;
   height: 4rem;
-  border-radius: 2rem;
+  font-family: Merriweather, serif;
+  font-size: 2rem;
+  text-decoration: none;
 }
+/*# sourceMappingURL=index.c92073ef.css.map */

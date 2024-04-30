@@ -1,9 +1,8 @@
 const content = document.querySelector(".state-content");
 const button = document.querySelector(".button");
-
-const asd = function () {
-  content.innerHTML = "";
-  const mora = `
+const asd = function() {
+    content.innerHTML = "";
+    const mora = `
           <div class="state-flag">
             <img class="flag-size" src="${usStates[0].flag}" />
           </div>
@@ -34,33 +33,10 @@ const asd = function () {
             </div>
           </div>
   `;
-
-  content.insertAdjacentHTML("afterbegin", mora);
+    content.insertAdjacentHTML("afterbegin", mora);
 };
-
-button.addEventListener("click", function () {
-  asd();
+button.addEventListener("click", function() {
+    asd();
 });
 
-const url = "https://us-states1.p.rapidapi.com/posts";
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "3037400f4fmsh6d52eb9d8927a41p13253fjsn42c0b6798534",
-    "X-RapidAPI-Host": "us-states1.p.rapidapi.com",
-  },
-};
-
-const mora = async function () {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const result = await response.json();
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-};
-mora();
+//# sourceMappingURL=index.b2cba414.js.map
