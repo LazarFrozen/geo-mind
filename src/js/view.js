@@ -1,5 +1,4 @@
 import { url, options } from "./config.js";
-import { Api } from "./api.js";
 
 class View {
   content = document.querySelector(".state-content");
