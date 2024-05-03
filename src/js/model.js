@@ -12,7 +12,6 @@ export const statesApi = async function () {
     }
 
     const result = await response.json();
-    console.log(result);
 
     informations.data = result.map((data) => ({
       id: data._id,
@@ -28,4 +27,26 @@ export const statesApi = async function () {
   }
 };
 
-statesApi();
+export const history = [];
+
+export const randomState = async function () {
+  try {
+    const min = Math.ceil(0);
+    const max = Math.floor(49);
+
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if (!history.includes(randomNumber)) {
+      history.push(randomNumber);
+    }
+
+    console.log(history);
+    return randomNumber;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// export const clickedState = function () {
+//   const check = document.querySelectorAll(".states-shape");
+// };
