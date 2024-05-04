@@ -1,6 +1,6 @@
 import * as model from "./model.js";
-import View from "./view.js";
-// import StatesView from "./statesView.js";
+import GenerateStatesView from "./generateStatesView.js";
+import StatesView from "./statesView.js";
 
 const controlStates = async function () {
   try {
@@ -8,20 +8,25 @@ const controlStates = async function () {
     const randomNumber = await model.randomState();
 
     // Sending random number
-    View.acceptRandomNumber(randomNumber);
+    GenerateStatesView.acceptRandomNumber(randomNumber);
 
     // Loading Data from API
     await model.statesApi();
 
     // Rendering Data
-    View.render(model.informations.data);
+    GenerateStatesView.render(model.informations.data);
+
+    // Abbreviation
+    GenerateStatesView.abbreviation(model.informations.data);
   } catch (err) {
     console.log(err);
   }
 };
 
 const initialization = function () {
-  View.startingHandler(controlStates);
-  View.stateHandler(controlStates);
+  GenerateStatesView.startingHandler(controlStates);
+  StatesView.stateHandler(controlStates);
+  StatesView.hoverEffectHandler(controlStates);
+  StatesView.mouseLeaveHandler(controlStates);
 };
 initialization();

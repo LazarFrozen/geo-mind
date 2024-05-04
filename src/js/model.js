@@ -46,7 +46,3 @@ export const randomState = async function () {
     console.log(err);
   }
 };
-
-// export const clickedState = function () {
-//   const check = document.querySelectorAll(".states-shape");
-// };
