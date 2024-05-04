@@ -2,25 +2,26 @@ import View from "./view.js";
 
 class StatesView extends View {
   states = document.querySelectorAll(".states-shape");
-  clickedStateDataId;
 
-  stateHandler() {
+  setAbbreviation(abb) {
+    this.abb = abb;
+  }
+
+  stateHandler(newState) {
     this.states.forEach((state) => {
       state.addEventListener("click", () => {
         this.clickedStateDataId = state.getAttribute("data-id");
-        console.log(this.clickedStateDataId);
+        this.comparingStates(newState);
       });
     });
-  }
-
-  getClickedStateData() {
-    return this.clickedStateDataId;
   }
 
   hoverEffectHandler() {
     this.states.forEach((state) => {
       state.addEventListener("mouseover", () => {
-        state.style.fill = "#EDEDED";
+        if (!state.classList.contains("guessed")) {
+          state.style.fill = "#EDEDED";
+        }
       });
     });
   }
@@ -28,7 +29,9 @@ class StatesView extends View {
   mouseLeaveHandler() {
     this.states.forEach((state) => {
       state.addEventListener("mouseleave", () => {
-        state.style.fill = "#ffffff";
+        if (!state.classList.contains("guessed")) {
+          state.style.fill = "#ffffff";
+        }
       });
     });
   }

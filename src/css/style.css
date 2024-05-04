@@ -5,6 +5,7 @@
   --bg2: #ffe066;
   --white-opacity: #ffffff50;
   --fill-states: #f9f9f9;
+  --fill-correct: #90ee90;
 }
 
 * {
@@ -106,4 +107,8 @@ html {
 
 .states-shape {
   cursor: pointer;
+}
+
+.states-shape.guessed {
+  fill: var(--fill-correct);
 }

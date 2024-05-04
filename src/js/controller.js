@@ -16,8 +16,14 @@ const controlStates = async function () {
     // Rendering Data
     GenerateStatesView.render(model.informations.data);
 
-    // Abbreviation
-    GenerateStatesView.abbreviation(model.informations.data);
+    // Loading abbreviation
+    const abbreviation = GenerateStatesView.abbreviation(
+      model.informations.data,
+      randomNumber
+    );
+
+    // Sending abbreviation
+    StatesView.setAbbreviation(abbreviation);
   } catch (err) {
     console.log(err);
   }

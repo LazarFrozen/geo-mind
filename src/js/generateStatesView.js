@@ -46,10 +46,6 @@ class GenerateStatesView extends View {
           </div>
   `;
   }
-
-  displayStateAbbreviation() {
-    return this.data[this.randomData].abbreviation;
-  }
 }
 
 export default new GenerateStatesView();
