@@ -23,26 +23,25 @@ export const statesApi = async function () {
       flag: data.flag,
     }));
   } catch (err) {
-    console.log(err);
+    throw new Error("Can not load state data");
   }
 };
 
-export const history = [];
+export const guessedStates = new Set();
 
 export const randomState = async function () {
   try {
     const min = Math.ceil(0);
     const max = Math.floor(49);
 
-    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    let randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (guessedStates.has(randomNumber));
 
-    if (!history.includes(randomNumber)) {
-      history.push(randomNumber);
-    }
-
-    console.log(history);
+    guessedStates.add(randomNumber);
     return randomNumber;
   } catch (err) {
-    console.log(err);
+    throw new Error("Can not load random state");
   }
 };

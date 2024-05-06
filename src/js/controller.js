@@ -1,9 +1,13 @@
 import * as model from "./model.js";
 import GenerateStatesView from "./generateStatesView.js";
 import StatesView from "./statesView.js";
+import generateStatesView from "./generateStatesView.js";
 
 const controlStates = async function () {
   try {
+    // Loading spinner
+    GenerateStatesView.renderSpinner();
+
     // Loading random number
     const randomNumber = await model.randomState();
 
@@ -24,13 +28,30 @@ const controlStates = async function () {
 
     // Sending abbreviation
     StatesView.setAbbreviation(abbreviation);
+
+    StatesView.modal(model.guessedStates);
   } catch (err) {
-    console.log(err);
+    generateStatesView.renderError(`${err}`);
   }
 };
 
+const restartGame = function () {
+  // Clear the guessed states set
+  model.guessedStates.clear();
+
+  // Clear all guessed state styles
+  const guessedElements = document.querySelectorAll(".states-shape.guessed");
+  guessedElements.forEach((el) => {
+    el.style.fill = "";
+    el.classList.remove("guessed");
+  });
+
+  // Start a new game
+  controlStates();
+};
+
 const initialization = function () {
-  GenerateStatesView.startingHandler(controlStates);
+  GenerateStatesView.startingHandler(restartGame);
   StatesView.stateHandler(controlStates);
   StatesView.hoverEffectHandler(controlStates);
   StatesView.mouseLeaveHandler(controlStates);

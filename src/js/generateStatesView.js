@@ -46,6 +46,30 @@ class GenerateStatesView extends View {
           </div>
   `;
   }
+
+  renderSpinner() {
+    this.spiner = `
+    <div class="spinner">
+      <img src="img/spinner.png" />
+    </div>
+    `;
+    this.clear();
+    this.content.insertAdjacentHTML("afterbegin", this.spiner);
+  }
+
+  renderError(message) {
+    this.markup = `
+    <div class="error">
+      <div>
+        <img src="img/error.png" class="error-img" />
+      </div>
+      <p>${message}</p>
+    </div>
+    `;
+
+    this.clear();
+    this.content.insertAdjacentHTML("afterbegin", this.markup);
+  }
 }
 
 export default new GenerateStatesView();

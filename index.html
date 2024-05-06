@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
-    <section class="main-section">
+    <section class="main-section blur">
+      <div class="main-h1">
+        <h1 class="text-h1">Geo mind</h1>
+      </div>
       <div class="container">
         <div class="us-map">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -31,57 +34,6 @@
             inkscape:version="0.48.4 r9939"
             sodipodi:docname="us.svg"
           >
-            <!-- <sodipodi:namedview
-              pagecolor="#ffffff"
-              bordercolor="#666666"
-              borderopacity="1"
-              objecttolerance="10"
-              gridtolerance="10"
-              guidetolerance="10"
-              inkscape:pageopacity="0"
-              inkscape:pageshadow="2"
-              inkscape:window-width="1920"
-              inkscape:window-height="1137"
-              id="namedview69"
-              showgrid="false"
-              inkscape:zoom="0.80893016"
-              inkscape:cx="817.66365"
-              inkscape:cy="409.3738"
-              inkscape:window-x="1192"
-              inkscape:window-y="118"
-              inkscape:window-maximized="1"
-              inkscape:current-layer="svg2"
-            /> -->
-            <!-- <defs id="defs4">
-              <style type="text/css" id="style6">
-                path class="states-shape" {
-                  fill-rule: evenodd;
-                }
-              </style>
-            </defs> -->
-            <!-- <metadata id="metadata8">
-              <views id="views10">
-                <view h="589.235294118" padding="0" w="1000" id="view12">
-                  <proj id="laea-usa" lat0="45" lon0="-100" />
-                  <bbox
-                    h="321.97"
-                    w="589.33"
-                    x="690.09"
-                    y="918.69"
-                    id="bbox15"
-                  />
-                </view>
-              </views>
-              <rdf:RDF>
-                <cc:Work rdf:about="">
-                  <dc:format>image/svg+xml</dc:format>
-                  <dc:type
-                    rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-                  />
-                  <dc:title />
-                </cc:Work>
-              </rdf:RDF>
-            </metadata> -->
             <path
               class="states-shape"
               inkscape:connector-curvature="0"
@@ -494,42 +446,23 @@
         </div>
         <div class="state-options">
           <div class="state-content">
-            <!-- <div class="state-flag">
-            <img class="flag-size" src="img/Flag_of_Alabama.svg.png" />
-          </div>
-          <div class="state-informations">
-            <div class="state-style">
-              <div class="state-name">
-                <img src="img/country.png" class="state-svg-size" />
-                <p class="text-center">State: Alabama</p>
-              </div>
-            </div>
-            <div class="state-style">
-              <div class="state-name">
-                <img src="img/capital.png" class="state-svg-size" />
-                <p class="text-center">Capital: Montgomery</p>
-              </div>
-            </div>
-            <div class="state-style">
-              <div class="state-name">
-                <img src="img/population.png" class="state-svg-size" />
-                <p class="text-center">Population: 4,903,200</p>
-              </div>
-            </div>
-            <div class="state-style">
-              <div class="state-name">
-                <img src="img/created.png" class="state-svg-size" />
-                <p class="text-center">Admission: December 14, 1819</p>
-              </div>
-            </div>
-          </div> -->
           </div>
           <div class="button-container">
-            <button class="button">Start game</button>
+            <!-- <button class="button">Start game</button> -->
+            <a href="#" class="button">Start game</a>
+            <div class="accuracy"><p class="text-accuracy">accuracy %<p class="accuracy-value">0</p></p></div>
           </div>
         </div>
       </div>
     </section>
+    <div class="popup">
+      <div class="popup-content">
+      <p class="congratz">congratulations</p>
+      <p class="congratz-content">You guessed all states!</p>
+      <img src="img/nature.jpg" class="nature" />
+      <button class="button button-done">Back to game</button>
+    </div>
+    </div>
   </body>
 </html>
 <script type="module" src="src/js/controller.js"></script>

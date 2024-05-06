@@ -1,10 +1,14 @@
 export default class View {
   content = document.querySelector(".state-content");
   button = document.querySelector(".button");
+  blur = document.querySelector(".blur");
+  popup = document.querySelector(".popup");
+  closeButton = document.querySelector(".button-done");
   data;
   abb;
   randomData;
   markup;
+  spiner;
 
   render(data) {
     this.data = data;
@@ -37,6 +41,12 @@ export default class View {
       clickedState.classList.add("guessed");
       newState();
     }
+    if (this.abb !== this.clickedStateDataId) {
+      clickedState.style.fill = "#FF2C21";
+    }
+    if (clickedState.classList.contains("guessed")) {
+      clickedState.style.fill = "#90EE90";
+    }
   }
 
   clear() {
@@ -48,5 +58,34 @@ export default class View {
       e.preventDefault();
       handler();
     });
+  }
+
+  closePopup() {
+    this.blur.classList.remove("active");
+    this.popup.classList.remove("active");
+  }
+
+  modal(guessedStates) {
+    console.log(guessedStates);
+    if (guessedStates.size === 50) {
+      this.blur.classList.toggle("active");
+      this.popup.classList.toggle("active");
+      if (this.closeButton) {
+        this.closeButton.addEventListener("click", this.closePopup.bind(this));
+      }
+
+      document.addEventListener("click", (event) => {
+        if (
+          this.popup &&
+          !this.popup.contains(event.target) &&
+          this.blur &&
+          !this.blur.contains(event.target) &&
+          this.popup.classList.contains("active")
+        ) {
+          this.closePopup();
+        }
+        return;
+      });
+    }
   }
 }
