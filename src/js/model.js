@@ -1,9 +1,11 @@
 import { url, options } from "./config.js";
 
+// Storing data from API
 export const informations = {
   data: {},
 };
 
+// fetching API
 export const statesApi = async function () {
   try {
     const response = await fetch(url, options);
@@ -29,6 +31,7 @@ export const statesApi = async function () {
 
 export const guessedStates = new Set();
 
+// Generating random number for a state
 export const randomState = async function () {
   try {
     const min = Math.ceil(0);

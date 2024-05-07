@@ -1,7 +1,6 @@
 import * as model from "./model.js";
 import GenerateStatesView from "./generateStatesView.js";
 import StatesView from "./statesView.js";
-import generateStatesView from "./generateStatesView.js";
 
 const controlStates = async function () {
   try {
@@ -29,9 +28,10 @@ const controlStates = async function () {
     // Sending abbreviation
     StatesView.setAbbreviation(abbreviation);
 
-    StatesView.modal(model.guessedStates);
+    // Sending set
+    StatesView.acceptSet(model.guessedStates);
   } catch (err) {
-    generateStatesView.renderError(`${err}`);
+    GenerateStatesView.renderError(`${err}`);
   }
 };
 

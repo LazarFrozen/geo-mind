@@ -13,7 +13,7 @@ class GenerateStatesView extends View {
           <div class="state-informations">
             <div class="state-style">
               <div class="state-name">
-                <img src="img/country.png" class="state-svg-size" />
+                <img src="img/country.png" alt="State name" class="state-svg-size" />
                 <p class="text-center">Country: ${
                   this.data[this.randomData].country
                 }</p>
@@ -21,7 +21,7 @@ class GenerateStatesView extends View {
             </div>
             <div class="state-style">
               <div class="state-name">
-                <img src="img/capital.png" class="state-svg-size" />
+                <img src="img/capital.png" alt="Capital of a state" class="state-svg-size" />
                 <p class="text-center">Capital: ${
                   this.data[this.randomData].capital
                 }</p>
@@ -29,7 +29,7 @@ class GenerateStatesView extends View {
             </div>
             <div class="state-style">
               <div class="state-name">
-                <img src="img/population.png" class="state-svg-size" />
+                <img src="img/population.png" alt="Population of a state" class="state-svg-size" />
                 <p class="text-center">Population: ${
                   this.data[this.randomData].population
                 }</p>
@@ -37,7 +37,7 @@ class GenerateStatesView extends View {
             </div>
             <div class="state-style">
               <div class="state-name">
-                <img src="img/created.png" class="state-svg-size" />
+                <img src="img/created.png" alt="Admission of a state" class="state-svg-size" />
                 <p class="text-center">Admission: ${
                   this.data[this.randomData].admission
                 }</p>
@@ -50,7 +50,7 @@ class GenerateStatesView extends View {
   renderSpinner() {
     this.spiner = `
     <div class="spinner">
-      <img src="img/spinner.png" />
+      <img src="img/spinner.png" alt="Loader" />
     </div>
     `;
     this.clear();
@@ -61,7 +61,7 @@ class GenerateStatesView extends View {
     this.markup = `
     <div class="error">
       <div>
-        <img src="img/error.png" class="error-img" />
+        <img src="img/error.png" alt="Error sign" class="error-img" />
       </div>
       <p>${message}</p>
     </div>
