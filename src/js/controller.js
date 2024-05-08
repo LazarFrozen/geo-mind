@@ -46,6 +46,11 @@ const restartGame = function () {
     el.classList.remove("guessed");
   });
 
+  // Reset accuracy
+  StatesView.correctGuesses = 0;
+  StatesView.incorrectGuesses = 0;
+  StatesView.calculateAccuracy();
+
   // Start a new game
   controlStates();
 };

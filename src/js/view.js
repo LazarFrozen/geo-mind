@@ -4,6 +4,7 @@ export default class View {
   blur = document.querySelector(".blur");
   popup = document.querySelector(".popup");
   closeButton = document.querySelector(".button-done");
+  accuracyValue = document.querySelector(".changing-value");
   data;
   abb;
   randomData;
@@ -48,7 +49,7 @@ export default class View {
     } else {
       this.accuracy = 0;
     }
-    console.log(`Accuracy: ${this.accuracy.toFixed(2)}%`);
+    this.accuracyValue.textContent = `${this.accuracy.toFixed(2)}%`;
   }
 
   comparingStates(newState) {
@@ -64,11 +65,7 @@ export default class View {
       clickedState.classList.add("guessed");
       this.correctGuesses += 1;
       this.calculateAccuracy();
-      if (this.setValue.size === 50) {
-        this.modal();
-      } else {
-        newState();
-      }
+      this.setValue.size === 50 ? this.modal() : newState();
     } else {
       this.incorrectGuesses += 1;
       this.calculateAccuracy();

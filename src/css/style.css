@@ -147,8 +147,7 @@ body {
 
 .button-container {
   display: flex;
-  gap: 3rem;
-  margin: 0 5rem 0 5rem;
+  padding-left: 5rem;
 }
 
 .button:link,
@@ -236,4 +235,17 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.content-positioning {
+  display: flex;
+  gap: 3rem;
+}
+
+.changing-value {
+  text-align: center;
+}
+
+.accuracy-text {
+  font-size: 2rem;
 }

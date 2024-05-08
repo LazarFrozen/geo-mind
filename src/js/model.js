@@ -1,5 +1,3 @@
-import { url, options } from "./config.js";
-
 // Storing data from API
 export const informations = {
   data: {},
@@ -8,7 +6,7 @@ export const informations = {
 // fetching API
 export const statesApi = async function () {
   try {
-    const response = await fetch(url, options);
+    const response = await fetch("us-states.json");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
