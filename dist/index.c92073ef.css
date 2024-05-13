@@ -4,6 +4,10 @@
   --bg2: #ffe066;
   --white-opacity: #ffffff50;
   --fill-states: #f9f9f9;
+  --fill-correct: #90ee90;
+  --white: #fff;
+  --black: #000;
+  --button-color: #ffd4a6;
 }
 
 * {
@@ -16,21 +20,75 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: Merriweather, serif;
+}
+
 .main-section {
   background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   background: -moz-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   background: -webkit-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100vh;
+  transition: all .5s;
   display: flex;
+  position: relative;
+}
+
+.main-h1 {
+  margin-top: 2rem;
+}
+
+.text-h1 {
+  text-transform: uppercase;
+  font-size: 4.8rem;
+}
+
+.blur.active {
+  filter: blur(5px);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.popup {
+  text-align: center;
+  background-color: var(--white);
+  visibility: hidden;
+  opacity: 0;
+  width: 40rem;
+  height: 40rem;
+  transition: all .5s;
+  display: flex;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  box-shadow: 0 .5rem 3rem #0000004d;
+}
+
+.popup.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all .5s;
+}
+
+.popup-content {
+  width: 100%;
 }
 
 .container {
   background-color: var(--white-opacity);
+  background-image: linear-gradient(#ffa94d93 0%, #ffe06693 100%), url("wallpaper.6d1168d1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
   border-radius: 5rem;
-  width: 150rem;
-  height: 70rem;
-  margin-top: 10rem;
+  width: 180rem;
+  height: 90rem;
+  margin-top: 2rem;
   padding: 5rem;
   display: flex;
 }
@@ -48,9 +106,15 @@ html {
   background-color: var(--fill-states);
   border-radius: 2.5rem;
   flex-direction: column;
-  height: 50rem;
-  margin: 0 5rem 5rem;
+  width: 80%;
+  height: 53rem;
+  margin: 0 5rem 3rem;
   display: flex;
+}
+
+.us-map svg {
+  width: 130rem;
+  height: 70rem;
 }
 
 .state-informations {
@@ -62,8 +126,8 @@ html {
 .flag-size {
   border-top-left-radius: 2.5rem;
   border-top-right-radius: 2.5rem;
-  width: 30rem;
-  height: 15rem;
+  width: 100%;
+  height: 100%;
 }
 
 .text-center {
@@ -74,7 +138,6 @@ html {
 .state-style {
   height: 4rem;
   margin-bottom: 2rem;
-  font-family: Merriweather, serif;
   font-size: 2rem;
   display: flex;
 }
@@ -90,15 +153,106 @@ html {
 }
 
 .button-container {
-  margin: 0 5rem;
+  padding-left: 5rem;
+  display: flex;
 }
 
-.button {
+.button:link, .button:visited {
+  color: var(--black);
+  border: 1px solid var(--black);
+  background-color: var(--fill-states);
+  cursor: pointer;
   border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
   width: 16rem;
   height: 4rem;
-  font-family: Merriweather, serif;
   font-size: 2rem;
   text-decoration: none;
+  display: flex;
+}
+
+.button:hover, .button:active {
+  background-color: var(--button-color);
+}
+
+.button-done {
+  margin: auto;
+}
+
+.error {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  display: flex;
+}
+
+.error-img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.accuracy {
+  font-size: 1.8rem;
+}
+
+.states-shape {
+  cursor: pointer;
+}
+
+.states-shape.guessed {
+  fill: var(--fill-correct);
+}
+
+.congratz {
+  text-transform: uppercase;
+  padding: 2rem 5rem 0;
+  font-size: 2.8rem;
+}
+
+.congratz-content {
+  padding: 1rem 5rem;
+  font-size: 2rem;
+}
+
+.nature {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 2rem;
+}
+
+.spinner {
+  text-align: center;
+  margin: 15rem auto;
+}
+
+.spinner img {
+  fill: var(--bg1);
+  width: 10rem;
+  height: 10rem;
+  animation: 2s linear infinite rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content-positioning {
+  gap: 3rem;
+  display: flex;
+}
+
+.changing-value {
+  text-align: center;
+}
+
+.accuracy-text {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=index.c92073ef.css.map */

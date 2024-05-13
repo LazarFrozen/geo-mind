@@ -40,7 +40,7 @@ body {
 }
 
 .main-h1 {
-  margin-top: -5rem;
+  margin-top: 2rem;
 }
 
 .text-h1 {
@@ -83,13 +83,15 @@ body {
 .container {
   display: flex;
   margin-top: 2rem;
-  width: 150rem;
-  height: 70rem;
+  width: 180rem;
+  height: 90rem;
   padding: 5rem;
-  background-color: var(--white-opacity);
   border-radius: 5rem;
+  background-color: var(--white-opacity);
   background-image: linear-gradient(180deg, #ffa94d93 0%, #ffe06693 100%),
     url("/img/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .states-shape {
@@ -108,6 +110,12 @@ body {
   margin: 0 5rem 3rem 5rem;
   border-radius: 2.5rem;
   height: 53rem;
+  width: 80%;
+}
+
+.us-map svg {
+  width: 130rem;
+  height: 70rem;
 }
 
 .state-informations {

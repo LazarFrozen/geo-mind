@@ -71,12 +71,12 @@ export default class View {
       this.calculateAccuracy();
       const missedCount = (this.missedAttempts.get(this.abb) || 0) + 1;
       this.missedAttempts.set(this.abb, missedCount);
-      if (missedCount >= 3) {
+      if (missedCount >= 3 && this.abb !== undefined) {
         const correctState = document.querySelector(`[data-id='${this.abb}']`);
         correctState.style.fill = "#fdfa72";
       }
     }
-    if (this.abb !== this.clickedStateDataId) {
+    if (this.abb !== this.clickedStateDataId && this.abb !== undefined) {
       clickedState.style.fill = "#FF2C21";
     }
     if (clickedState.classList.contains("guessed")) {

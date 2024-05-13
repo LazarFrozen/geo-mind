@@ -6,7 +6,7 @@ export const informations = {
 // fetching API
 export const statesApi = async function () {
   try {
-    const response = await fetch("us-states.json");
+    const response = await fetch("https://api.npoint.io/401b50c1408637aadf7a");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
