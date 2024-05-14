@@ -24,6 +24,14 @@ body {
   font-family: Merriweather, serif;
 }
 
+.main-content {
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 5rem;
+  display: flex;
+}
+
 .main-section {
   background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   background: -moz-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
@@ -38,8 +46,8 @@ body {
   position: relative;
 }
 
-.main-h1 {
-  margin-top: 2rem;
+.facts {
+  margin-right: auto;
 }
 
 .text-h1 {
@@ -84,7 +92,7 @@ body {
   background-color: var(--white-opacity);
   background-image: linear-gradient(#ffa94d93 0%, #ffe06693 100%), url("wallpaper.6d1168d1.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   border-radius: 5rem;
   width: 180rem;
   height: 90rem;
@@ -254,5 +262,47 @@ body {
 
 .accuracy-text {
   font-size: 2rem;
+}
+
+.usa-facts {
+  background-color: var(--white);
+  visibility: hidden;
+  opacity: 0;
+  width: 55rem;
+  height: 73rem;
+  line-height: 3rem;
+  transition: all .5s;
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  box-shadow: 0 .5rem 3rem #0000004d;
+}
+
+.usa-facts.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all .5s;
+}
+
+.usa-flag {
+  width: 55rem;
+}
+
+.usa-info {
+  font-size: 1.6rem;
+}
+
+.usa-bold {
+  font-weight: 700;
+}
+
+.usa-content {
+  padding: 3rem;
+}
+
+.exit {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 /*# sourceMappingURL=index.c92073ef.css.map */

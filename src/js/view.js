@@ -1,10 +1,13 @@
 export default class View {
   content = document.querySelector(".state-content");
-  button = document.querySelector(".button");
+  button = document.querySelector(".button-start");
   blur = document.querySelector(".blur");
   popup = document.querySelector(".popup");
   closeButton = document.querySelector(".button-done");
   accuracyValue = document.querySelector(".changing-value");
+  usaFacts = document.querySelector(".usa-facts");
+  factsButton = document.querySelector(".button-facts");
+  closeFactsButton = document.querySelector(".button-fact-close");
   data;
   abb;
   randomData;
@@ -89,6 +92,7 @@ export default class View {
   }
 
   startingHandler(handler) {
+    this.startFacts();
     this.button.addEventListener("click", (e) => {
       e.preventDefault();
       handler();
@@ -118,6 +122,37 @@ export default class View {
         this.closePopup();
       }
       return;
+    });
+  }
+
+  closeFacts() {
+    this.blur.classList.remove("active");
+    this.usaFacts.classList.remove("active");
+  }
+
+  startFacts() {
+    this.factsButton.addEventListener("click", () => {
+      this.blur.classList.toggle("active");
+      this.usaFacts.classList.toggle("active");
+      if (this.closeFactsButton) {
+        console.log(this.closeFactsButton);
+        this.closeFactsButton.addEventListener(
+          "click",
+          this.closeFacts.bind(this)
+        );
+      }
+
+      document.addEventListener("click", (event) => {
+        if (
+          this.usaFacts &&
+          !this.usaFacts.contains(event.target) &&
+          this.blur &&
+          !this.blur.contains(event.target) &&
+          this.usaFacts.classList.contains("active")
+        ) {
+          this.closeFacts();
+        }
+      });
     });
   }
 }
