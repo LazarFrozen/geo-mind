@@ -31,7 +31,6 @@ export default class View {
     this.data = data;
     this.randomData = randomData;
     this.abb = this.displayStateAbbreviation();
-    console.log(this.abb);
     this.missedAttempts.set(this.abb, 0);
     return this.abb;
   }
@@ -56,14 +55,11 @@ export default class View {
   }
 
   comparingStates(newState) {
-    console.log(this.abb);
-    console.log(this.clickedStateDataId);
     const clickedState = document.querySelector(
       `[data-id='${this.clickedStateDataId}']`
     );
     if (this.abb === this.clickedStateDataId) {
       this.setValue = this.acceptedSet;
-      console.log(this.setValue);
       clickedState.style.fill = "#90EE90";
       clickedState.classList.add("guessed");
       this.correctGuesses += 1;
@@ -135,7 +131,6 @@ export default class View {
       this.blur.classList.toggle("active");
       this.usaFacts.classList.toggle("active");
       if (this.closeFactsButton) {
-        console.log(this.closeFactsButton);
         this.closeFactsButton.addEventListener(
           "click",
           this.closeFacts.bind(this)
