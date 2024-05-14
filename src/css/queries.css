@@ -3,9 +3,14 @@
   .container {
     width: 160rem;
   }
+
   .us-map svg {
     width: 110rem;
     height: 70rem;
+  }
+
+  .main-content {
+    width: 160rem;
   }
 }
 
@@ -14,9 +19,14 @@
   .container {
     width: 140rem;
   }
+
   .us-map svg {
     width: 90rem;
     height: 60rem;
+  }
+
+  .main-content {
+    width: 140rem;
   }
 }
 
@@ -25,9 +35,14 @@
   .container {
     width: 120rem;
   }
+
   .us-map svg {
     width: 70rem;
     height: 60rem;
+  }
+
+  .main-content {
+    width: 120rem;
   }
 }
 
@@ -35,7 +50,8 @@
 @media (max-width: 75em) {
   .main-section {
     justify-content: start;
-    height: 150rem;
+    height: 155rem;
+    width: 100%;
   }
 
   .container {
@@ -50,8 +66,8 @@
     height: 70rem;
   }
 
-  .main-h1 {
-    margin-top: 0;
+  .usa-none {
+    display: none;
   }
 
   .state-content {
@@ -63,5 +79,249 @@
 
   .button-container {
     padding-left: 0;
+  }
+
+  .main-content {
+    width: 100rem;
+    justify-content: center;
+  }
+
+  .facts {
+    display: none;
+  }
+
+  .usa-facts-solution {
+    top: 52%;
+    left: 45%;
+    margin-top: 5rem;
+    height: 66rem;
+    display: block;
+    position: absolute;
+  }
+
+  .exit {
+    display: none;
+  }
+
+  .state-options {
+    width: 100%;
+  }
+}
+
+/* Below 1000px */
+@media (max-width: 62.5em) {
+  .container {
+    width: 80rem;
+  }
+
+  .us-map svg {
+    width: 80rem;
+    height: 70rem;
+  }
+
+  .usa-facts-solution {
+    width: 40rem;
+  }
+
+  .usa-flag {
+    width: 40rem;
+  }
+
+  .main-content {
+    width: 80rem;
+  }
+
+  .state-content {
+    width: 80%;
+  }
+
+  .state-options {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+
+  .content-positioning {
+    margin-right: 5rem;
+  }
+}
+
+/* Below 800px */
+@media (max-width: 50em) {
+  .main-section {
+    height: 130rem;
+  }
+
+  .container {
+    width: 60rem;
+    height: 40rem;
+  }
+
+  .us-map svg {
+    width: 60rem;
+    height: 40rem;
+  }
+
+  .usa-facts-solution {
+    top: 39%;
+    left: 52%;
+    width: 27rem;
+    height: 70rem;
+  }
+
+  .usa-flag {
+    width: 27rem;
+  }
+
+  .main-content {
+    width: 60rem;
+  }
+
+  .state-options {
+    width: 100%;
+  }
+
+  .state-content {
+    width: 40%;
+  }
+}
+
+/* Below 600 */
+@media (max-width: 37.5em) {
+  .usa-none {
+    display: block;
+  }
+
+  .usa-facts-solution {
+    display: none;
+  }
+
+  .main-section {
+    height: 110rem;
+  }
+
+  .state-options {
+    align-items: center;
+  }
+
+  .main-content {
+    width: 50rem;
+    padding: 0;
+  }
+
+  .container {
+    width: 50rem;
+    height: 30rem;
+  }
+
+  .us-map svg {
+    width: 50rem;
+    height: 30rem;
+  }
+
+  .states-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .state-content {
+    width: 70%;
+    height: 56rem;
+    margin: 5rem 0 2rem 0;
+  }
+
+  .usa-facts {
+    top: 10%;
+    left: 17.5%;
+    width: 40rem;
+    height: 73rem;
+    position: fixed;
+    background-color: var(--white);
+    line-height: 3rem;
+    box-shadow: 0 0.5rem 3rem rgb(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .usa-flag {
+    width: 40rem;
+  }
+
+  .facts {
+    display: flex;
+  }
+
+  .exit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Below 500px */
+@media (max-width: 31.25em) {
+  .main-section {
+    height: 108rem;
+  }
+
+  .main-content {
+    width: 40rem;
+  }
+
+  .text-h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    width: 40rem;
+    height: 25rem;
+  }
+
+  .us-map svg {
+    width: 40rem;
+    height: 25rem;
+  }
+
+  .usa-facts {
+    height: 78rem;
+    width: 30rem;
+    left: 15%;
+  }
+
+  .usa-flag {
+    width: 30rem;
+  }
+
+  .content-positioning {
+    margin-left: 5rem;
+  }
+}
+
+/* Below 400px */
+@media (max-width: 25em) {
+  .usa-facts {
+    left: 10%;
+  }
+  .main-content {
+    width: 30rem;
+  }
+
+  .text-h1 {
+    font-size: 2.4rem;
+  }
+
+  .container {
+    width: 30rem;
+    height: 20rem;
+  }
+
+  .us-map svg {
+    width: 30rem;
+    height: 20rem;
+  }
+
+  .state-content {
+    width: 90%;
   }
 }

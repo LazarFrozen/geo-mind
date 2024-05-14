@@ -27,10 +27,11 @@ body {
 
 .main-content {
   padding: 0 5rem 0 5rem;
-  width: 100%;
+  width: 180rem;
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .main-section {
@@ -108,7 +109,7 @@ body {
 }
 
 .state-options {
-  width: 100%;
+  width: 40rem;
 }
 
 .state-content {
@@ -266,6 +267,15 @@ body {
   font-size: 2rem;
 }
 
+.usa-facts-solution {
+  width: 55rem;
+  height: 73rem;
+  background-color: var(--white);
+  line-height: 3rem;
+  box-shadow: 0 0.5rem 3rem rgb(0, 0, 0, 0.3);
+  display: none;
+}
+
 .usa-facts {
   top: 10%;
   left: 35%;
@@ -306,4 +316,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.states-container {
+  display: flex;
 }
